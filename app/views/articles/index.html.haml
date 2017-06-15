@@ -1,3 +1,11 @@
 %h1 index page
 
+-@articles.each do |article|
+  %h2= article.title
+  %p
+    Published at
+    = article.created_at.strftime('%b %d, %Y')
+  %p= article.content
+
+
 = link_to "New", new_article_path
